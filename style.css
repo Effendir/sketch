@@ -1,7 +1,27 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  padding: 5px;
+}
+
+button, h1 {
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+  border-radius: 2px;
+  font-weight: 500;
+}
+
 .wrapper {
-  height: 100vh;
+  height: 80vh;
   width: auto;
   display: flex;
+  gap: 10px;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -15,15 +35,50 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  border: 5px solid red;
+  border: 3px solid rgb(0, 0, 0);
+  border-radius: 2px;
 }
 
 .grid-square {
-  border: 1px solid black;
   margin: 0px;
   padding: 0px;
 }
 
+.controls {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.red {
+  background-color: red;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.green {
+  background-color: green;
+}
+
+.cyan {
+  background-color: cyan;
+}
+
 .blue {
   background-color: blue;
+}
+
+.violet {
+  background-color: violet;
+}
+
+.white {
+  background-color: white;
 }
