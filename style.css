@@ -77,6 +77,10 @@ footer a:hover {
   align-items: center;
 }
 
+.decrease-grid-size {
+  display: none;
+}
+
 .red {
   background-color: red;
 }

@@ -54,23 +54,33 @@ function changeSquareColor(color) {
 increaseGridSizeButton.addEventListener("click", () => {
   gridsContainer.innerHTML = "";
   if (gridSize === 50) {
-    gridSize = gridSize;
+    increaseGridSizeButton.style.display = "none";
   } else {
+    decreaseGridSizeButton.style.display = "inline";
+    increaseGridSizeButton.style.display = "inline";
     gridSize += 10;
+    addGridSquare(gridSize);
+    changeSquareColor(currentColor);
+    if (gridSize === 50) {
+      increaseGridSizeButton.style.display = "none";
+    }
   }
-  addGridSquare(gridSize);
-  changeSquareColor(currentColor);
 })
 
 decreaseGridSizeButton.addEventListener("click", () => {
   gridsContainer.innerHTML = "";
   if (gridSize === 10) {
-    gridSize = gridSize;
+    decreaseGridSizeButton.style.display = "none";
   } else {
+    decreaseGridSizeButton.style.display = "inline";
+    increaseGridSizeButton.style.display = "inline";
     gridSize -= 10;
+    addGridSquare(gridSize);
+    changeSquareColor(currentColor);
+    if (gridSize === 10) {
+      decreaseGridSizeButton.style.display = "none";
+    }
   }
-  addGridSquare(gridSize);
-  changeSquareColor(currentColor);
 })
 
 clearButton.addEventListener("click", () => {
