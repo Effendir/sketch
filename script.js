@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const gridsContainer = document.querySelector(".grids-container");
 const indicatorButton = document.querySelector(".indicator");
 const clearButton = document.querySelector(".clear");
 const eraserButton = document.querySelector(".eraser");
@@ -20,7 +20,7 @@ function addGridSquare(squaresNumber) {
     div.classList.add("grid-square");
     div.style.height = `${(500 / squaresNumber)}px`;
     div.style.width = `${(500 / squaresNumber)}px`;
-    container.appendChild(div);
+    gridsContainer.appendChild(div);
   }
   changeSquareColor(currentColor);
 }
@@ -52,7 +52,7 @@ function changeSquareColor(color) {
 }
 
 increaseGridSizeButton.addEventListener("click", () => {
-  container.innerHTML = "";
+  gridsContainer.innerHTML = "";
   if (gridSize === 50) {
     gridSize = gridSize;
   } else {
@@ -63,7 +63,7 @@ increaseGridSizeButton.addEventListener("click", () => {
 })
 
 decreaseGridSizeButton.addEventListener("click", () => {
-  container.innerHTML = "";
+  gridsContainer.innerHTML = "";
   if (gridSize === 10) {
     gridSize = gridSize;
   } else {
