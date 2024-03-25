@@ -18,8 +18,8 @@ function addGridSquare(squaresNumber) {
   for (let i = 0; i < squaresNumber * squaresNumber; i++) {
     const div = document.createElement("div");
     div.classList.add("grid-square");
-    div.style.height = `${(500 / squaresNumber)}px`;
-    div.style.width = `${(500 / squaresNumber)}px`;
+    div.style.height = `${(700 / squaresNumber)}px`;
+    div.style.width = `${(700 / squaresNumber)}px`;
     gridsContainer.appendChild(div);
   }
   changeSquareColor(currentColor);
