@@ -23,29 +23,35 @@ function addGridSquare(squaresNumber) {
     gridsContainer.appendChild(div);
   }
   changeSquareColor(currentColor);
+  changeSquareColorOnClick(currentColor);
+}
+
+function changeSquareColorOnClick(color) {
+  const squares = document.querySelectorAll(".grid-square");
+  let isMouseDown = false;
+  document.addEventListener("mousedown", () => {
+    isMouseDown = true;
+  });
+  document.addEventListener("mouseup", () => {
+    isMouseDown = false;
+  });
+  squares.forEach(square => {
+    square.addEventListener("mouseenter", () => {
+      if (isMouseDown) {
+        square.classList.remove("white", "red", "orange", "yellow", "green", "cyan", "blue", "violet");
+        square.classList.add(color);
+      }
+    });
+  });
 }
 
 function changeSquareColor(color) {
-  indicatorButton.classList.remove("white");
-  indicatorButton.classList.remove("red");
-  indicatorButton.classList.remove("orange");
-  indicatorButton.classList.remove("yellow");
-  indicatorButton.classList.remove("green");
-  indicatorButton.classList.remove("cyan");
-  indicatorButton.classList.remove("blue");
-  indicatorButton.classList.remove("violet");
+  indicatorButton.classList.remove("red", "orange", "yellow", "green", "cyan", "blue", "violet", "white");
   indicatorButton.classList.add(color);
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach(square => {
-    square.addEventListener("mouseover", () => {
-      square.classList.remove("white");
-      square.classList.remove("red");
-      square.classList.remove("orange");
-      square.classList.remove("yellow");
-      square.classList.remove("green");
-      square.classList.remove("cyan");
-      square.classList.remove("blue");
-      square.classList.remove("violet");
+    square.addEventListener("click", () => {
+      square.classList.remove("red", "orange", "yellow", "green", "cyan", "blue", "violet", "white");
       square.classList.add(color);
     });
   });
@@ -86,54 +92,56 @@ decreaseGridSizeButton.addEventListener("click", () => {
 clearButton.addEventListener("click", () => {
   const squares = document.querySelectorAll(".grid-square");
   squares.forEach(square => {
-    square.classList.remove("red");
-    square.classList.remove("orange");
-    square.classList.remove("yellow");
-    square.classList.remove("green");
-    square.classList.remove("cyan");
-    square.classList.remove("blue");
-    square.classList.remove("violet");
+    square.classList.remove("red", "orange", "yellow", "green", "cyan", "blue", "violet");
     square.classList.add("white");
   });
 })
 
 eraserButton.addEventListener("click", () => {
   changeSquareColor("white");
+  changeSquareColorOnClick("white");
   currentColor = "white";
 })
 
 redButton.addEventListener("click", () => {
   changeSquareColor("red");
+  changeSquareColorOnClick("red");
   currentColor = "red";
 })
 
 orangeButton.addEventListener("click", () => {
   changeSquareColor("orange");
+  changeSquareColorOnClick("orange");
   currentColor = "orange";
 })
 
 yellowButton.addEventListener("click", () => {
   changeSquareColor("yellow");
+  changeSquareColorOnClick("yellow");
   currentColor = "yellow";
 })
 
 greenButton.addEventListener("click", () => {
   changeSquareColor("green");
+  changeSquareColorOnClick("green");
   currentColor = "green";
 })
 
 cyanButton.addEventListener("click", () => {
   changeSquareColor("cyan");
+  changeSquareColorOnClick("cyan");
   currentColor = "cyan";
 })
 
 blueButton.addEventListener("click", () => {
   changeSquareColor("blue");
+  changeSquareColorOnClick("blue");
   currentColor = "blue";
 })
 
 violetButton.addEventListener("click", () => {
   changeSquareColor("violet");
+  changeSquareColorOnClick("violet");
   currentColor = "violet";
 })
 
