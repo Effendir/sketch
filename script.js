@@ -12,7 +12,7 @@ const cyanButton = document.querySelector(".cyan");
 const blueButton = document.querySelector(".blue");
 const violetButton = document.querySelector(".violet");
 let currentColor = "red";
-let gridSize = 10;
+let gridSize = 30;
 
 function addGridSquare(squaresNumber) {
   for (let i = 0; i < squaresNumber * squaresNumber; i++) {
@@ -24,6 +24,7 @@ function addGridSquare(squaresNumber) {
   }
   changeSquareColor(currentColor);
   changeSquareColorOnClick(currentColor);
+  indicatorButton.innerText = `Grid size ${gridSize.toString()} x ${gridSize.toString()}`
 }
 
 function changeSquareColorOnClick(color) {
@@ -60,15 +61,17 @@ function changeSquareColor(color) {
 increaseGridSizeButton.addEventListener("click", () => {
   gridsContainer.innerHTML = "";
   if (gridSize === 50) {
-    increaseGridSizeButton.style.display = "none";
+    increaseGridSizeButton.classList.add("disabled");
+    addGridSquare(gridSize);
+    changeSquareColor(currentColor);
   } else {
-    decreaseGridSizeButton.style.display = "inline";
-    increaseGridSizeButton.style.display = "inline";
+    decreaseGridSizeButton.classList.remove("disabled");
+    increaseGridSizeButton.classList.remove("disabled");
     gridSize += 10;
     addGridSquare(gridSize);
     changeSquareColor(currentColor);
     if (gridSize === 50) {
-      increaseGridSizeButton.style.display = "none";
+      increaseGridSizeButton.classList.add("disabled");
     }
   }
 })
@@ -76,15 +79,17 @@ increaseGridSizeButton.addEventListener("click", () => {
 decreaseGridSizeButton.addEventListener("click", () => {
   gridsContainer.innerHTML = "";
   if (gridSize === 10) {
-    decreaseGridSizeButton.style.display = "none";
+    decreaseGridSizeButton.classList.add("disabled");
+    addGridSquare(gridSize);
+    changeSquareColor(currentColor);
   } else {
-    decreaseGridSizeButton.style.display = "inline";
-    increaseGridSizeButton.style.display = "inline";
+    decreaseGridSizeButton.classList.remove("disabled");
+    increaseGridSizeButton.classList.remove("disabled");
     gridSize -= 10;
     addGridSquare(gridSize);
     changeSquareColor(currentColor);
     if (gridSize === 10) {
-      decreaseGridSizeButton.style.display = "none";
+      decreaseGridSizeButton.classList.add("disabled");
     }
   }
 })

@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "pixel";
+  src: url("fonts/pixel.ttf");
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -6,29 +11,40 @@ body {
 
 h1 {
   padding: 5px;
-}
-
-button, h1 {
-  background-color: white;
+  font-size: 2.7em;
+  background-color: rgb(228, 228, 228);
   color: black;
   border: 3px solid black;
   border-radius: 2px;
-  font-weight: 500;
+  font-family: "pixel";
+}
+
+button {
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: 2px solid black;
+  border-radius: 2px;
+  font-family: "pixel", 'Courier New', Courier, monospace;
+  font-size: large;
 }
 
 footer {
+  height: 70px;
   width: 100%;
   bottom: 0;
   left: 0;
   position: fixed;
-  background: rgba(58, 34, 2, 0.1);
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0px 20px;
+  justify-content: center;
+  gap: 50px;
   box-sizing: border-box;
+  background-color: rgb(228, 228, 228);
   color: black;
-  height: 80px;
+  border: 3px solid black;
+  font-weight: bold;
+  font-family: "pixel";
+  font-size: 1.1em;
 }
 
 footer a {
@@ -71,18 +87,16 @@ footer a:hover {
 }
 
 .controls {
-  width: 500px;
+  width: 650px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-}
-
-.decrease-grid-size {
-  display: none;
+  gap: 15px;
 }
 
 .red {
   background-color: red;
+  color: white;
 }
 
 .orange {
@@ -95,6 +109,7 @@ footer a:hover {
 
 .green {
   background-color: green;
+  color: white;
 }
 
 .cyan {
@@ -103,6 +118,7 @@ footer a:hover {
 
 .blue {
   background-color: blue;
+  color: white;
 }
 
 .violet {
@@ -115,4 +131,9 @@ footer a:hover {
 
 .footer-copyright i {
   color: grey;
+}
+
+.disabled {
+  color: rgb(222, 222, 222);
+  border: 2px solid rgb(222, 222, 222);
 }
